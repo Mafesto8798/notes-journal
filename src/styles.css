@@ -1,0 +1,416 @@
+.deleteBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  background: #CF6679;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  width: 50px;
+  height: 150px;
+  border-radius: 15px 0px 0px 15px;
+}
+
+.deleteBtn:hover {
+  cursor: pointer;
+  -webkit-animation: delete 0.2s 2 ease-in-out alternate;
+          animation: delete 0.2s 2 ease-in-out alternate;
+}
+
+@-webkit-keyframes delete {
+  25% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes delete {
+  25% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+.notesList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 75%;
+  margin: auto;
+}
+
+.notesList .note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20px 100px 20px 100px;
+}
+
+.notesList .note .note-link {
+  text-decoration: none;
+  color: black;
+}
+
+.notesList .note .note-link .note-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #505050;
+  border-radius: 0px 15px 15px 0px;
+  border: solid #BB86FC 2px;
+  border-left: none;
+  width: 300px;
+  height: 146px;
+}
+
+.notesList .note .note-link .note-card:hover {
+  -webkit-animation: noteCard 0.3s 1 ease-in-out both;
+          animation: noteCard 0.3s 1 ease-in-out both;
+}
+
+@-webkit-keyframes noteCard {
+  100% {
+    background: #BB86FC;
+  }
+}
+
+@keyframes noteCard {
+  100% {
+    background: #BB86FC;
+  }
+}
+
+.notesList .note .note-link .note-card:hover .title {
+  -webkit-animation: title 0.3s 1 ease-in-out both;
+          animation: title 0.3s 1 ease-in-out both;
+}
+
+@-webkit-keyframes title {
+  100% {
+    color: #505050;
+  }
+}
+
+@keyframes title {
+  100% {
+    color: #505050;
+  }
+}
+
+.notesList .note .note-link .note-card .title {
+  color: #BB86FC;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+}
+
+.addNote {
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.addBtnContainer #addBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #505050;
+  border: solid #BB86FC 2px;
+  margin: 50px auto;
+  width: 75px;
+  height: 75px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  color: #BB86FC;
+}
+
+.addBtnContainer #addBtn:hover {
+  cursor: pointer;
+  -webkit-animation: addBtn 0.3s  ease-in-out forwards;
+          animation: addBtn 0.3s  ease-in-out forwards;
+}
+
+@-webkit-keyframes addBtn {
+  100% {
+    background: #BB86FC;
+    color: #505050;
+  }
+}
+
+@keyframes addBtn {
+  100% {
+    background: #BB86FC;
+    color: #505050;
+  }
+}
+
+.addingNote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px auto;
+  height: 700px;
+  width: 600px;
+  background: #3d3d3d;
+  border: solid #BB86FC 2px;
+  border-radius: 10px;
+  color: #BB86FC;
+}
+
+.addingNote input {
+  text-align: center;
+  width: 500px;
+  color: #BB86FC;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  border: none;
+  background: #3d3d3d;
+}
+
+.addingNote #addContent {
+  width: 400px;
+  height: 400px;
+  padding: 30px;
+  resize: none;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #3d3d3d;
+  color: #BB86FC;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+}
+
+.addingNote .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20px auto;
+}
+
+.addingNote .options .cancelBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #CF6679;
+  border-radius: 15px 0px 0px 15px;
+  color: black;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  margin: auto;
+}
+
+.addingNote .options .cancelBtn:hover {
+  cursor: pointer;
+  -webkit-animation: delete 0.2s 2 ease-in-out alternate;
+          animation: delete 0.2s 2 ease-in-out alternate;
+}
+
+.addingNote .options .addNote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 200px;
+  height: 50px;
+  font-size: 2.3rem;
+  background: #BB86FC;
+  border-radius: 0px 15px 15px 0px;
+  color: black;
+}
+
+.addingNote .options .addNote:hover {
+  cursor: pointer;
+  -webkit-animation: createNote 0.6s  infinite ease-in-out alternate;
+          animation: createNote 0.6s  infinite ease-in-out alternate;
+}
+
+@-webkit-keyframes createNote {
+  50% {
+    background: #03dAC6;
+  }
+  100% {
+    background: #5be484;
+  }
+}
+
+@keyframes createNote {
+  50% {
+    background: #03dAC6;
+  }
+  100% {
+    background: #5be484;
+  }
+}
+
+.note-info {
+  font-family: sans-serif;
+  font-size: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.note-info .noteInfoTitle {
+  color: #BB86FC;
+}
+
+.note-info #updateContent {
+  font-family: 'Nerko One', cursive;
+  font-size: 3rem;
+  outline: none;
+  cursor: auto;
+  background: #505050;
+  color: #BB86FC;
+  resize: none;
+  padding: 100px;
+  width: 70%;
+  height: 60vh;
+}
+
+.note-info #updateContent::-webkit-scrollbar {
+  width: 15px;
+  background: #505050;
+}
+
+.note-info #updateContent::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #BB86FC;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #3d3d3d;
+  margin: 0;
+  font-size: 2rem;
+}
+/*# sourceMappingURL=styles.css.map */

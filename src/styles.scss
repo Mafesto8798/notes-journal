@@ -1,0 +1,20 @@
+@import './Stylesheets/notelist';
+@import './Stylesheets/addNote';
+@import './Stylesheets/noteInfo';
+
+@mixin flexbox($jus,$dir){
+    display:flex;
+    justify-content: $jus;
+    align-items: center;
+    flex-direction: $dir;
+}
+
+html{
+    font-size:62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: rgb(61, 61, 61);
+    margin:0;
+    font-size:2rem;
+}
