@@ -7,8 +7,7 @@ import {v4 as uuidv4} from 'uuid'
 import {BrowserRouter as Router,Route} from 'react-router-dom'
 
 const defaultNotes = [
-  {id:uuidv4(),name: "Note to Self",text: "Don't forget to clean the office today!"},
-  {id:uuidv4(),name: "Example Note #1" ,text: "Forget things easily? Want to write down your thoughts? Try taking some notes now!"}
+  {id:uuidv4(),name: "Note to Self",text: "Don't forget to clean the office today!"}
 ]
 
 function App() {
