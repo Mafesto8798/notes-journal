@@ -1,7 +1,6 @@
 @import './variables';
 
 .note-info{
-    font-family:sans-serif;
     font-size:3.5rem;
     display:flex;
     justify-content: center;
@@ -29,6 +28,18 @@
             border-radius:10px;
             background:$primaryClr;
             
+        }
+    }
+}
+
+
+@media (max-width:1200px){
+    .note-info{
+        font-size:2rem;
+        #updateContent{
+            margin:auto;
+            width:80%;
+            padding:25px;
         }
     }
 }

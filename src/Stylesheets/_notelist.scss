@@ -46,7 +46,6 @@
         margin:20px 100px 20px 100px;
     .note-link{
         text-decoration: none;
-        color:black;
         .note-card{
             @include flexbox(center,column);
             background:rgb(80, 80, 80);
@@ -81,7 +80,43 @@
 }
 }
 
-.addNote{
-    font-size:2rem;
-    font-family: Arial, Helvetica, sans-serif;
+@media (max-width:1200px){
+    .deleteBtn{
+        height:100px;
+    }
+    .notesList{
+        @include flexbox(space-evenly,row);
+        width:90%;
+        .note{
+            margin:10px 5px 10px 5px;
+            .note-link{
+                .note-card{
+                        width:200px;
+                        height:96px;
+                    .title{
+                        font-size:1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:600px){
+        .deleteBtn{
+            height:100px;
+        }
+        .notesList{
+            .note{
+                .note-link{
+                    .note-card{
+                            width:200px;
+                            height:96px;
+                        .title{
+                            font-size:1.4rem;
+                        }
+                    }
+                }
+            }
+        }
 }

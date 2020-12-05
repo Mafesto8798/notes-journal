@@ -65,6 +65,15 @@
         color:$primaryClr;
         font-family: Arial, Helvetica, sans-serif;
         font-size:3rem;
+        &::-webkit-scrollbar{
+            width:10px;
+            background:rgb(80,80,80);
+        }
+        &::-webkit-scrollbar-thumb{
+            border-radius:10px;
+            background:$primaryClr;
+            
+        }
     }
     .options{
         @include flexbox(space-around,row);
@@ -102,6 +111,59 @@
                 100%{
                     background:#5be484;
                 }
+            }
+        }
+    }
+}
+@media (max-width:1200px){
+    .addingNote{
+        width:80%;
+        input{
+            width:90%;
+        }
+        #addContent{
+            font-size:3rem;
+            width:70%;
+        }
+        .options{
+                margin:10px auto;
+            .cancelBtn{
+                font-size:2rem;
+            }
+        }
+    }
+}
+
+@media (max-width:600px){
+    .addBtnContainer{
+        #addBtn{
+            height:50px;
+            width:50px;
+            font-size:3rem;
+        }
+    }
+
+    .addingNote{
+        width:80%;
+        input{
+            font-size:2rem;
+            width:90%;
+        }
+        #addContent{
+            font-size:2rem;
+            width:70%;
+        }
+        .options{
+                margin:10px auto;
+            .cancelBtn{
+                font-size:1.7rem;
+                height:40px;
+                width:40px;
+            }
+            .addNote{
+                font-size:1.7rem;
+                width:150px;
+                height:40px;
             }
         }
     }

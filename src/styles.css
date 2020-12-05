@@ -104,7 +104,6 @@
 
 .notesList .note .note-link {
   text-decoration: none;
-  color: black;
 }
 
 .notesList .note .note-link .note-card {
@@ -169,9 +168,49 @@
   font-size: 2rem;
 }
 
-.addNote {
-  font-size: 2rem;
-  font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 1200px) {
+  .deleteBtn {
+    height: 100px;
+  }
+  .notesList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 90%;
+  }
+  .notesList .note {
+    margin: 10px 5px 10px 5px;
+  }
+  .notesList .note .note-link .note-card {
+    width: 200px;
+    height: 96px;
+  }
+  .notesList .note .note-link .note-card .title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .deleteBtn {
+    height: 100px;
+  }
+  .notesList .note .note-link .note-card {
+    width: 200px;
+    height: 96px;
+  }
+  .notesList .note .note-link .note-card .title {
+    font-size: 1.4rem;
+  }
 }
 
 .addBtnContainer #addBtn {
@@ -267,6 +306,16 @@
   font-size: 3rem;
 }
 
+.addingNote #addContent::-webkit-scrollbar {
+  width: 10px;
+  background: #505050;
+}
+
+.addingNote #addContent::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #BB86FC;
+}
+
 .addingNote .options {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -358,8 +407,58 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .addingNote {
+    width: 80%;
+  }
+  .addingNote input {
+    width: 90%;
+  }
+  .addingNote #addContent {
+    font-size: 3rem;
+    width: 70%;
+  }
+  .addingNote .options {
+    margin: 10px auto;
+  }
+  .addingNote .options .cancelBtn {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .addBtnContainer #addBtn {
+    height: 50px;
+    width: 50px;
+    font-size: 3rem;
+  }
+  .addingNote {
+    width: 80%;
+  }
+  .addingNote input {
+    font-size: 2rem;
+    width: 90%;
+  }
+  .addingNote #addContent {
+    font-size: 2rem;
+    width: 70%;
+  }
+  .addingNote .options {
+    margin: 10px auto;
+  }
+  .addingNote .options .cancelBtn {
+    font-size: 1.7rem;
+    height: 40px;
+    width: 40px;
+  }
+  .addingNote .options .addNote {
+    font-size: 1.7rem;
+    width: 150px;
+    height: 40px;
+  }
+}
+
 .note-info {
-  font-family: sans-serif;
   font-size: 3.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -401,6 +500,17 @@
 .note-info #updateContent::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #BB86FC;
+}
+
+@media (max-width: 1200px) {
+  .note-info {
+    font-size: 2rem;
+  }
+  .note-info #updateContent {
+    margin: auto;
+    width: 80%;
+    padding: 25px;
+  }
 }
 
 html {
