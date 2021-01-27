@@ -18,21 +18,6 @@
             border-radius:15px 0px 0px 15px;
             &:hover{
                 cursor: pointer;
-                animation: delete 0.2s 2 ease-in-out alternate;
-            }
-            @keyframes delete{
-                25%{
-                    transform: rotate(5deg);
-                }
-                50%{
-                    transform: rotate(-5deg);
-                }
-                75%{
-                    transform: rotate(5deg);
-                }
-                100%{
-                    transform: rotate(0deg);
-                }
             }
     }
 
@@ -42,18 +27,28 @@
     width:75%;
     margin:auto;
     .note{
-        @include flexbox(center,row);
+        @include flexbox(center,column);
         margin:20px 100px 20px 100px;
+        .title{
+            text-align: center;
+            color:$primaryClr;
+            font-size:3rem;
+        }
     .note-link{
         text-decoration: none;
         .note-card{
-            @include flexbox(center,column);
-            background:rgb(80, 80, 80);
-            border-radius:0px 15px 15px 0px;
+            @include flexbox(start,row);
+            align-items: start;
+            background:#fff;
+            border-radius:15px;
             border:solid $primaryClr 2px;
-            border-left:none;
-            width:300px;
-            height:146px;
+            width:250px;
+            height:250px;
+            padding:15px;
+            .preview-text{
+                font-size:1rem;
+                color:$primaryClr;
+            }
             &:hover{
                 animation:noteCard 0.3s 1 ease-in-out both;
             }
@@ -62,12 +57,12 @@
                     background:$primaryClr;
                 }
             }
-            &:hover .title{
+            &:hover .preview-text{
                 animation:title 0.3s 1 ease-in-out both;
             }
             @keyframes title{
                 100%{
-                    color:rgb(80,80,80);
+                    color:white;
                 }
             }
             .title{
@@ -88,14 +83,14 @@
         @include flexbox(space-evenly,row);
         width:90%;
         .note{
+            .title{
+                font-size:2rem;
+            }
             margin:10px 5px 10px 5px;
             .note-link{
                 .note-card{
                         width:200px;
-                        height:96px;
-                    .title{
-                        font-size:1.4rem;
-                    }
+                        height:200px;
                 }
             }
         }
@@ -108,14 +103,8 @@
         }
         .notesList{
             .note{
-                .note-link{
-                    .note-card{
-                            width:200px;
-                            height:96px;
-                        .title{
-                            font-size:1.4rem;
-                        }
-                    }
+                .title{
+                    font-size:1.5rem;
                 }
             }
         }

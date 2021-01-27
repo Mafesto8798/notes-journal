@@ -26,11 +26,12 @@ export default function Note({note}) {
     return (
         <>
         <div className="note">
-        <div className="deleteBtn" onClick={handleDelete}>x</div>
+        {/* <div className="deleteBtn" onClick={handleDelete}>x</div> */}
         <Link className="note-link" to={`/${note.name}`}> 
         <div className="note-card">
-            <h1 className="title">{note.name}</h1>
+            <p className="preview-text">{note.text}</p>
         </div>
+        <h1 className="title">{note.name}</h1>
         </Link>
         </div>
         </>

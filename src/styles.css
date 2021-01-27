@@ -23,46 +23,6 @@
 
 .deleteBtn:hover {
   cursor: pointer;
-  -webkit-animation: delete 0.2s 2 ease-in-out alternate;
-          animation: delete 0.2s 2 ease-in-out alternate;
-}
-
-@-webkit-keyframes delete {
-  25% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
-  }
-  50% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
-  }
-  75% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@keyframes delete {
-  25% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
-  }
-  50% {
-    -webkit-transform: rotate(-5deg);
-            transform: rotate(-5deg);
-  }
-  75% {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
 }
 
 .notesList {
@@ -95,11 +55,17 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 20px 100px 20px 100px;
+}
+
+.notesList .note .title {
+  text-align: center;
+  color: #BB86FC;
+  font-size: 3rem;
 }
 
 .notesList .note .note-link {
@@ -110,22 +76,30 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: #505050;
-  border-radius: 0px 15px 15px 0px;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  background: #fff;
+  border-radius: 15px;
   border: solid #BB86FC 2px;
-  border-left: none;
-  width: 300px;
-  height: 146px;
+  width: 250px;
+  height: 250px;
+  padding: 15px;
+}
+
+.notesList .note .note-link .note-card .preview-text {
+  font-size: 1rem;
+  color: #BB86FC;
 }
 
 .notesList .note .note-link .note-card:hover {
@@ -145,20 +119,20 @@
   }
 }
 
-.notesList .note .note-link .note-card:hover .title {
+.notesList .note .note-link .note-card:hover .preview-text {
   -webkit-animation: title 0.3s 1 ease-in-out both;
           animation: title 0.3s 1 ease-in-out both;
 }
 
 @-webkit-keyframes title {
   100% {
-    color: #505050;
+    color: white;
   }
 }
 
 @keyframes title {
   100% {
-    color: #505050;
+    color: white;
   }
 }
 
@@ -191,12 +165,12 @@
   .notesList .note {
     margin: 10px 5px 10px 5px;
   }
+  .notesList .note .title {
+    font-size: 2rem;
+  }
   .notesList .note .note-link .note-card {
     width: 200px;
-    height: 96px;
-  }
-  .notesList .note .note-link .note-card .title {
-    font-size: 1.4rem;
+    height: 200px;
   }
 }
 
@@ -204,12 +178,8 @@
   .deleteBtn {
     height: 100px;
   }
-  .notesList .note .note-link .note-card {
-    width: 200px;
-    height: 96px;
-  }
-  .notesList .note .note-link .note-card .title {
-    font-size: 1.4rem;
+  .notesList .note .title {
+    font-size: 1.5rem;
   }
 }
 
@@ -481,7 +451,7 @@
 
 .note-info #updateContent {
   font-family: 'Nerko One', cursive;
-  font-size: 3rem;
+  font-size: 4rem;
   outline: none;
   cursor: auto;
   background: #505050;
