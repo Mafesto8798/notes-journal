@@ -446,7 +446,52 @@
 }
 
 .note-info .noteInfoTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #BB86FC;
+  margin-top: 30px;
+}
+
+.note-info .noteInfoTitle .backBtn {
+  background: #BB86FC;
+  color: #3d3d3d;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  border-radius: 15px;
+  font-family: 'Nerko One', cursive;
+  text-decoration: none;
+}
+
+.note-info .noteInfoTitle .backBtn:hover {
+  cursor: pointer;
+  -webkit-animation: backBtn 0.1s ease-in-out forwards;
+          animation: backBtn 0.1s ease-in-out forwards;
+}
+
+@-webkit-keyframes backBtn {
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes backBtn {
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 .note-info #updateContent {

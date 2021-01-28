@@ -1,7 +1,7 @@
 import React,{useContext,useEffect,useRef} from 'react'
 import {NotesContext} from '../Context/NotesContext'
 import {CurrentNote} from '../Context/CurrentNote'
-import {useParams} from 'react-router-dom'
+import {useParams,Link} from 'react-router-dom'
 
 const LOCAL_STORAGE_KEY = 'myAppData'
 
@@ -40,6 +40,7 @@ export default function NoteInfo() {
     return (
         <div className="note-info">
             <div className="noteInfoTitle">
+                <Link to="/" className="backBtn">Back</Link>
             <h1>{currentNote.name}</h1>
             </div>
             <textarea ref={updateRef} name="content" id="updateContent" spellCheck="false" value={currentNote.text} onChange={handleUpdate} />

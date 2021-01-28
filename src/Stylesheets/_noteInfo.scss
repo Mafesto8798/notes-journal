@@ -7,8 +7,34 @@
     align-items: center;
     flex-direction: column;
     .noteInfoTitle{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         color:$primaryClr ;
+        margin-top:30px;
+        .backBtn{
+            background:$primaryClr;
+            color:rgb(61,61,61);
+            width:100px;
+            height:50px;
+            text-align: center;
+            border-radius:15px;
+            font-family: 'Nerko One', cursive;
+            text-decoration: none;
+            &:hover{
+                cursor: pointer;
+                animation: backBtn 0.1s ease-in-out forwards;
+            }
+        }
     }
+
+    @keyframes backBtn{
+        100%{
+            transform:scale(1.1);
+        }
+    }
+
     #updateContent{
         font-family: 'Nerko One', cursive;
         font-size:4rem;
