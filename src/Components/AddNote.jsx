@@ -44,7 +44,7 @@ function addNote(){
     if(isAdding) return(
         <>
         <div className="addingNote">
-        <p>Length - {title.length}</p>
+        <p>Max Length = 22 <strong>|</strong> Length - {title.length}</p>
         <input ref={titleRef} type="text" name="title" placeholder="Title" value={title} spellCheck='false' autoComplete='off' onChange={updateTitle}/>
         <textarea ref={textRef} name="text" id="addContent" placeholder="Write a note..." spellCheck="false" value={content} onChange={updateContent}></textarea>
         <div className="options">

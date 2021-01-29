@@ -11,10 +11,105 @@
 
 html{
     font-size:62.5%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 body{
     background: rgb(61, 61, 61);
     margin:0;
     font-size:2rem;
+}
+
+.deleteModal{
+    position: absolute;
+    height:100%;
+    width:100%;
+    background:rgba(11,11,11,0.7);
+    &:focus{
+        outline:none;
+    }
+    .confirm-delete{
+        background:rgba(61,61,61,1);
+        padding:20px;
+        color:$primaryClr;
+        border:solid black 3px;
+        margin:150px auto;
+        text-align:center;
+        font-size:2rem;
+        border-radius:25px;
+        font-family: 'Quicksand', sans-serif;
+        width:800px;
+        height:300px;
+        .choices{
+            @include flexbox(center,column);
+            .confirmBtn{
+                @include flexbox(center,row);
+                text-align: center;
+                height:40px;
+                width:100px;
+                padding:5px;
+                margin:10px;
+                border-radius:15px;
+                background:$primaryClr;
+                color:rgb(61,61,61);
+                &:hover{
+                    cursor: pointer;
+                    animation: btnHover 0.1s ease-in-out forwards;
+                }
+            }
+            .rejectBtn{
+                @include flexbox(center,row);
+                text-align: center;
+                height:40px;
+                width:100px;
+                padding:5px;
+                margin:10px;
+                border-radius:15px;
+                background:$primaryClr;
+                color:rgb(61,61,61);
+                &:hover{
+                    cursor: pointer;
+                    animation: btnHover 0.1s ease-in-out forwards;
+                }
+            }
+        }
+    }
+}
+
+@keyframes btnHover{
+    100%{
+        transform:scale(1.1);
+    }
+}
+
+@media (max-width:1200px){
+    .deleteModal{
+        .confirm-delete{
+            width:80%;
+            .choices{
+                .rejectBtn:hover{
+                    animation: none;
+                }
+                .confirmBtn:hover{
+                    animation: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:800px){
+    .deleteModal{
+        .confirm-delete{
+            width:80%;
+            font-size:1.3rem;
+            .choices{
+                .rejectBtn:hover{
+                    animation: none;
+                }
+                .confirmBtn:hover{
+                    animation: none;
+                }
+            }
+        }
+    }
 }
