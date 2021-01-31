@@ -66,8 +66,8 @@
   background: #fff;
   border-radius: 15px;
   border: solid #BB86FC 2px;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 325px;
   padding: 15px;
 }
 
@@ -141,7 +141,7 @@
   }
   .notesList .note .note-link .note-card {
     width: 200px;
-    height: 200px;
+    height: 325px;
   }
 }
 
