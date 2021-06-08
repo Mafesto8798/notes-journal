@@ -72,6 +72,8 @@
 }
 
 .notesList .note .note-link .note-card .preview-text {
+  height: inherit;
+  overflow: hidden;
   font-size: 1.6rem;
   color: #a974eb;
 }
