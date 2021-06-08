@@ -63,7 +63,7 @@ export default function NoteInfo() {
         {redirectDelete()}
         <ReactModal
         isOpen={confirmDelete}
-        className="deleteModal"
+        className="modal"
         ariaHideApp={false}
         >
                 <div className="confirm-delete">
@@ -76,7 +76,7 @@ export default function NoteInfo() {
         </ReactModal>  
         <div className="note-info">
             <div className="noteInfoTitle">
-                <Link to="/" className="backBtn">Back</Link>
+            <Link to="/" className="backBtn">Back</Link>
             <h1>{currentNote.name}</h1>
             </div>
             <textarea ref={updateRef} name="content" id="updateContent" spellCheck="false" value={currentNote.text} onChange={handleUpdate} />

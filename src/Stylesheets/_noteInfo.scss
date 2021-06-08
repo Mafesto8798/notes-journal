@@ -26,15 +26,9 @@
 
 .note-info{
     font-size:3.5rem;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flexbox(center,column);
     .noteInfoTitle{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        @include flexbox(center,column);
         color:$primaryClr ;
         margin-top:30px;
         .backBtn{
@@ -66,12 +60,12 @@
         font-size:4rem;
         outline:none;
         cursor: auto;
-        background:rgb(80,80,80);
+        background:white;
         color:$primaryClr;
         resize:none;
         padding:100px;
         width:70%;
-        height:60vh;
+        height:50vh;
         &::-webkit-scrollbar{
             width:15px;
             background:rgb(80,80,80);

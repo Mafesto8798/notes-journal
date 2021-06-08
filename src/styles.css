@@ -15,7 +15,7 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 75%;
-  margin: auto;
+  margin: 250px auto;
 }
 
 .notesList .note {
@@ -38,7 +38,7 @@
 .notesList .note .title {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  color: #BB86FC;
+  color: #a974eb;
   font-size: 3rem;
 }
 
@@ -65,15 +65,15 @@
           align-items: start;
   background: #fff;
   border-radius: 15px;
-  border: solid #BB86FC 2px;
+  border: solid #a974eb 2px;
   width: 200px;
   height: 325px;
   padding: 15px;
 }
 
 .notesList .note .note-link .note-card .preview-text {
-  font-size: 1rem;
-  color: #BB86FC;
+  font-size: 1.6rem;
+  color: #a974eb;
 }
 
 .notesList .note .note-link .note-card:hover {
@@ -83,13 +83,13 @@
 
 @-webkit-keyframes noteCard {
   100% {
-    background: #BB86FC;
+    background: #a974eb;
   }
 }
 
 @keyframes noteCard {
   100% {
-    background: #BB86FC;
+    background: #a974eb;
   }
 }
 
@@ -111,13 +111,14 @@
 }
 
 .notesList .note .note-link .note-card .title {
-  color: #BB86FC;
+  color: #a974eb;
   font-family: 'Quicksand', sans-serif;
   font-size: 2rem;
 }
 
 @media (max-width: 1200px) {
   .notesList {
+    margin-top: 150px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -143,11 +144,24 @@
     width: 200px;
     height: 325px;
   }
+  .notesList .note .note-link .note-card .preview-text {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 600px) {
+  .notesList {
+    margin-top: 100px;
+  }
   .notesList .note .title {
     font-size: 1.5rem;
+  }
+  .notesList .note .note-link .note-card {
+    width: 70px;
+    height: 100px;
+  }
+  .notesList .note .note-link .note-card .preview-text {
+    font-size: 0.9rem;
   }
 }
 
@@ -166,16 +180,15 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background: #505050;
-  border: solid #BB86FC 2px;
-  width: 80px;
+  border: solid #a974eb 2px;
   height: 80px;
-  margin: 50px auto;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Quicksand', sans-serif;
   font-size: 5rem;
-  color: #BB86FC;
+  color: #a974eb;
 }
 
 .addBtnContainer #addBtn:hover {
@@ -186,14 +199,14 @@
 
 @-webkit-keyframes addBtn {
   100% {
-    background: #BB86FC;
+    background: #a974eb;
     color: #505050;
   }
 }
 
 @keyframes addBtn {
   100% {
-    background: #BB86FC;
+    background: #a974eb;
     color: #505050;
   }
 }
@@ -202,8 +215,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -213,24 +227,25 @@
           flex-direction: column;
   font-family: 'Quicksand', sans-serif;
   margin: 50px auto;
-  height: 700px;
-  width: 600px;
-  background: #3d3d3d;
-  border: solid #BB86FC 2px;
+  height: 800px;
+  width: 700px;
+  background: white;
+  border: solid #a974eb 2px;
   border-radius: 10px;
-  color: #BB86FC;
+  color: #a974eb;
 }
 
 .addingNote input {
   text-align: center;
   width: 500px;
-  color: #BB86FC;
+  color: #a974eb;
   font-size: 3rem;
   font-weight: bold;
   font-family: 'Quicksand', sans-serif;
   outline: none;
   border: none;
-  background: #3d3d3d;
+  border-bottom: #a974eb 2px solid;
+  background: white;
 }
 
 .addingNote #addContent {
@@ -240,9 +255,8 @@
   resize: none;
   border-radius: 5px;
   outline: none;
-  border: none;
-  background: #3d3d3d;
-  color: #BB86FC;
+  border: #a974eb 2px solid;
+  color: #a974eb;
   font-family: 'Quicksand', sans-serif;
   font-size: 3rem;
 }
@@ -254,7 +268,7 @@
 
 .addingNote #addContent::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #BB86FC;
+  background: #a974eb;
 }
 
 .addingNote .options {
@@ -320,7 +334,7 @@
   height: 50px;
   font-size: 2.3rem;
   font-family: 'Quicksand', sans-serif;
-  background: #BB86FC;
+  background: #a974eb;
   border-radius: 0px 15px 15px 0px;
   color: black;
 }
@@ -375,7 +389,6 @@
 @media (max-width: 600px) {
   .addBtnContainer #addBtn {
     height: 50px;
-    width: 50px;
     font-size: 3rem;
   }
   .addingNote {
@@ -486,7 +499,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: #BB86FC;
+  color: #a974eb;
   margin-top: 30px;
 }
 
@@ -504,7 +517,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background: #BB86FC;
+  background: #a974eb;
   color: #3d3d3d;
   width: 100px;
   font-size: 2.5rem;
@@ -540,12 +553,12 @@
   font-size: 4rem;
   outline: none;
   cursor: auto;
-  background: #505050;
-  color: #BB86FC;
+  background: white;
+  color: #a974eb;
   resize: none;
   padding: 100px;
   width: 70%;
-  height: 60vh;
+  height: 50vh;
 }
 
 .note-info #updateContent::-webkit-scrollbar {
@@ -555,7 +568,7 @@
 
 .note-info #updateContent::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #BB86FC;
+  background: #a974eb;
 }
 
 @media (max-width: 1200px) {
@@ -613,21 +626,21 @@ body {
   font-size: 2rem;
 }
 
-.deleteModal {
+.modal {
   position: absolute;
   height: 100%;
   width: 100%;
   background: rgba(11, 11, 11, 0.7);
 }
 
-.deleteModal:focus {
+.modal:focus {
   outline: none;
 }
 
-.deleteModal .confirm-delete {
+.modal .confirm-delete {
   background: #3d3d3d;
   padding: 20px;
-  color: #BB86FC;
+  color: #a974eb;
   border: solid black 3px;
   margin: 150px auto;
   text-align: center;
@@ -638,7 +651,7 @@ body {
   height: 300px;
 }
 
-.deleteModal .confirm-delete .choices {
+.modal .confirm-delete .choices {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -654,7 +667,7 @@ body {
           flex-direction: column;
 }
 
-.deleteModal .confirm-delete .choices .confirmBtn {
+.modal .confirm-delete .choices .confirmBtn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -674,17 +687,17 @@ body {
   padding: 5px;
   margin: 10px;
   border-radius: 15px;
-  background: #BB86FC;
+  background: #a974eb;
   color: #3d3d3d;
 }
 
-.deleteModal .confirm-delete .choices .confirmBtn:hover {
+.modal .confirm-delete .choices .confirmBtn:hover {
   cursor: pointer;
   -webkit-animation: btnHover 0.1s ease-in-out forwards;
           animation: btnHover 0.1s ease-in-out forwards;
 }
 
-.deleteModal .confirm-delete .choices .rejectBtn {
+.modal .confirm-delete .choices .rejectBtn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -704,11 +717,11 @@ body {
   padding: 5px;
   margin: 10px;
   border-radius: 15px;
-  background: #BB86FC;
+  background: #a974eb;
   color: #3d3d3d;
 }
 
-.deleteModal .confirm-delete .choices .rejectBtn:hover {
+.modal .confirm-delete .choices .rejectBtn:hover {
   cursor: pointer;
   -webkit-animation: btnHover 0.1s ease-in-out forwards;
           animation: btnHover 0.1s ease-in-out forwards;

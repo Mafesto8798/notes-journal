@@ -12,9 +12,8 @@
     @include flexbox(center,column);
     background:rgb(80, 80, 80);
     border:solid $primaryClr 2px;
-    width:80px;
     height:80px;
-    margin: 50px auto;
+    margin: auto;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -36,12 +35,12 @@
 
 }
 .addingNote{
-    @include flexbox(space-around,column);
+    @include flexbox(space-evenly,column);
     font-family: 'Quicksand', sans-serif;
     margin:50px auto;
-    height:700px;
-    width:600px;
-    background:rgb(61, 61, 61);
+    height:800px;
+    width:700px;
+    background:white;
     border:solid $primaryClr 2px;
     border-radius:10px;
     color:$primaryClr;
@@ -54,7 +53,8 @@
         font-family: 'Quicksand', sans-serif;
         outline:none;
         border:none;
-        background:rgb(61,61,61);
+        border-bottom:$primaryClr 2px solid;
+        background:white;
     }
     #addContent{
         width:400px;
@@ -63,8 +63,7 @@
         resize:none;
         border-radius:5px;
         outline:none;
-        border:none;
-        background:rgb(61,61,61);
+        border:$primaryClr 2px solid;
         color:$primaryClr;
         font-family: 'Quicksand', sans-serif;
         font-size:3rem;
@@ -145,7 +144,6 @@
     .addBtnContainer{
         #addBtn{
             height:50px;
-            width:50px;
             font-size:3rem;
         }
     }
