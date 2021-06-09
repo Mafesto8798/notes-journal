@@ -61,6 +61,7 @@
         outline:none;
         cursor: auto;
         background:white;
+        border-radius:15px;
         color:$primaryClr;
         resize:none;
         padding:100px;
@@ -111,7 +112,8 @@
         height:30px;
     }
     .note-info{
-        font-size:2rem;
+        font-size:1rem;
+        margin:10px auto;
         .noteInfoTitle{
             .backBtn{
                 height:40px;

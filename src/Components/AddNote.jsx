@@ -46,6 +46,7 @@ function addNote(){
         <ReactModal 
         className="modal"
         isOpen={isAdding}
+        ariaHideApp={false}
         >
         <div className="addingNote">
         <p>Max Length = 22 <strong>|</strong> Length - {title.length}</p>

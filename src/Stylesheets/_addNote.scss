@@ -63,6 +63,7 @@
         resize:none;
         border-radius:5px;
         outline:none;
+        overflow: visible;
         border:$primaryClr 2px solid;
         color:$primaryClr;
         font-family: 'Quicksand', sans-serif;
@@ -140,7 +141,7 @@
     }
 }
 
-@media (max-width:600px){
+@media (max-width:800px){
     .addBtnContainer{
         #addBtn{
             height:50px;
@@ -149,8 +150,10 @@
     }
 
     .addingNote{
-        width:80%;
+        height:70%;
+        width:90%;
         input{
+            margin:20px auto;
             font-size:2rem;
             width:90%;
         }
