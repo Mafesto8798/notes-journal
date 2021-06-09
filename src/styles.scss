@@ -82,7 +82,7 @@ body{
 }
 
 @media (max-width:1200px){
-    .deleteModal{
+    .modal{
         .confirm-delete{
             width:80%;
             .choices{
@@ -98,7 +98,7 @@ body{
 }
 
 @media (max-width:800px){
-    .deleteModal{
+    .modal{
         .confirm-delete{
             width:80%;
             font-size:1.3rem;
