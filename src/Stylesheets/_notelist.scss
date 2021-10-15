@@ -1,109 +1,61 @@
-@mixin flexbox($jus,$dir){
-    display:flex;
-    justify-content: $jus;
-    align-items: center;
-    flex-direction: $dir;
+@mixin flexbox($jus, $dir) {
+  display: flex;
+  justify-content: $jus;
+  align-items: center;
+  flex-direction: $dir;
 }
 
-@import './variables';
+@import "./variables";
 
+.notesList {
+  @include flexbox(space-evenly, row);
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 120px auto;
+}
 
-.notesList{
-    @include flexbox(center,row);
-    flex-wrap:wrap;
-    width:75%;
-    margin:250px auto;
-    .note{
-        @include flexbox(center,column);
-        margin:20px 100px 20px 100px;
-        .title{
-            font-family: 'Quicksand', sans-serif;
-            text-align: center;
-            color:$primaryClr;
-            font-size:2rem;
-        }
-    .note-link{
-        text-decoration: none;
-        .note-card{
-            @include flexbox(start,row);
-            align-items: start;
-            background:#fff;
-            border-radius:15px;
-            border:solid $primaryClr 2px;
-            width:200px;
-            height:325px;
-            padding:15px;
-            .preview-text{
-                height:inherit;
-                overflow: hidden;
-                font-size:1.6rem;
-                color:$primaryClr;
-            }
-            &:hover{
-                animation:noteCard 0.3s 1 ease-in-out both;
-            }
-            @keyframes noteCard{
-                100%{
-                    background:$primaryClr;
-                }
-            }
-            &:hover .preview-text{
-                animation:title 0.3s 1 ease-in-out both;
-            }
-            @keyframes title{
-                100%{
-                    color:white;
-                }
-            }
-            .title{
-                color:$primaryClr;
-                font-family: 'Quicksand', sans-serif;
-                font-size:2rem;
-            }
-        }
+.note {
+  margin: 6% auto;
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+    animation: note 0.1s ease-in-out forwards;
+  }
+}
+
+.note-link {
+  text-decoration: none;
+  color: #333;
+}
+@keyframes note {
+  to {
+    transform: scale(1.1);
+  }
+}
+@media (max-width: 1200px) {
+  .note {
+    width: 250px;
+    height: 350px;
+  }
+}
+@media (max-width: 600px) {
+  .note-list {
+    @include flexbox(center, column);
+    width: 100%;
+  }
+  .note {
+    width: 120px;
+    height: 220px;
+    margin: 15px auto;
+    padding: 10px;
+    .note-title {
+      font-size: 1.5rem;
     }
-}
-}
-
-@media (max-width:1200px){
-    .notesList{
-        margin-top:150px;
-        @include flexbox(space-evenly,row);
-        width:90%;
-        .note{
-            .title{
-                font-size:2rem;
-            }
-            margin:10px 5px 10px 5px;
-            .note-link{
-                .note-card{
-                        width:200px;
-                        height:325px;
-                        .preview-text{
-                            font-size:2rem;
-                        }
-                }
-            }
-        }
+    .note-text {
+      font-size: 1.2rem;
     }
-}
-
-@media (max-width:600px){
-        .notesList{
-            margin-top:100px;
-            .note{
-                .title{
-                    font-size:0.9rem;
-                }
-                .note-link{
-                    .note-card{
-                        width:70px;
-                        height:100px;
-                        .preview-text{
-                            font-size:0.9rem;
-                        }
-                    }
-                }
-            }
-        }
+  }
 }

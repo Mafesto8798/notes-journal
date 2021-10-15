@@ -1,24 +1,35 @@
-import React,{useContext} from 'react'
-import {NotesContext} from '../Context/NotesContext'
-import {Link} from 'react-router-dom'
+import React, { useContext } from "react";
+import { NotesContext } from "../Context/NotesContext";
+import { Link } from "react-router-dom";
+import { Paper, Typography } from "@mui/material";
 
+export default function Note({ note }) {
+  const [notes, setNotes] = useContext(NotesContext);
 
-
-export default function Note({note}) {
-    const [notes,setNotes] = useContext(NotesContext)
-
-    return (
-        <>
-        <div className="note">
-        <Link className="note-link" to={`/${note.name}`}> 
-        <div className="note-card">
-            <p className="preview-text">{note.text}</p>
-        </div>
-        <h1 className="title">{note.name}</h1>
-        </Link>
-        </div>
-        </>
-    )
+  return (
+    <>
+      <Link className="note-link" to={`/${note.name}`}>
+        <Paper className="note" elevation={24}>
+          <Typography
+            className="note-title"
+            variant="h3"
+            sx={{ textAlign: "center", margin: "10px auto" }}
+          >
+            {note.name}
+          </Typography>
+          <Typography
+            className="note-text"
+            variant="h5"
+            sx={{
+              textAlign: "center",
+              width: "100%",
+              margin: "auto",
+            }}
+          >
+            {note.text}
+          </Typography>
+        </Paper>
+      </Link>
+    </>
+  );
 }
-
-

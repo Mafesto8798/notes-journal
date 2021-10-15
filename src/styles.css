@@ -2,9 +2,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -14,45 +14,88 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 75%;
-  margin: 250px auto;
+  width: 80%;
+  margin: 120px auto;
 }
 
-.notesList .note {
+.note {
+  margin: 6% auto;
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.note:hover {
+  cursor: pointer;
+  -webkit-animation: note 0.1s ease-in-out forwards;
+          animation: note 0.1s ease-in-out forwards;
+}
+
+.note-link {
+  text-decoration: none;
+  color: #333;
+}
+
+@-webkit-keyframes note {
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes note {
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@media (max-width: 1200px) {
+  .note {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .note-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .note {
+    width: 120px;
+    height: 220px;
+    margin: 15px auto;
+    padding: 10px;
+  }
+  .note .note-title {
+    font-size: 1.5rem;
+  }
+  .note .note-text {
+    font-size: 1.2rem;
+  }
+}
+
+.addBtnContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 20px 100px 20px 100px;
-}
-
-.notesList .note .title {
-  font-family: 'Quicksand', sans-serif;
-  text-align: center;
-  color: #a974eb;
-  font-size: 2rem;
-}
-
-.notesList .note .note-link {
-  text-decoration: none;
-}
-
-.notesList .note .note-link .note-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -60,157 +103,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  background: #fff;
-  border-radius: 15px;
-  border: solid #a974eb 2px;
-  width: 200px;
-  height: 325px;
-  padding: 15px;
-}
-
-.notesList .note .note-link .note-card .preview-text {
-  height: inherit;
-  overflow: hidden;
-  font-size: 1.6rem;
-  color: #a974eb;
-}
-
-.notesList .note .note-link .note-card:hover {
-  -webkit-animation: noteCard 0.3s 1 ease-in-out both;
-          animation: noteCard 0.3s 1 ease-in-out both;
-}
-
-@-webkit-keyframes noteCard {
-  100% {
-    background: #a974eb;
-  }
-}
-
-@keyframes noteCard {
-  100% {
-    background: #a974eb;
-  }
-}
-
-.notesList .note .note-link .note-card:hover .preview-text {
-  -webkit-animation: title 0.3s 1 ease-in-out both;
-          animation: title 0.3s 1 ease-in-out both;
-}
-
-@-webkit-keyframes title {
-  100% {
-    color: white;
-  }
-}
-
-@keyframes title {
-  100% {
-    color: white;
-  }
-}
-
-.notesList .note .note-link .note-card .title {
-  color: #a974eb;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 2rem;
-}
-
-@media (max-width: 1200px) {
-  .notesList {
-    margin-top: 150px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: 90%;
-  }
-  .notesList .note {
-    margin: 10px 5px 10px 5px;
-  }
-  .notesList .note .title {
-    font-size: 2rem;
-  }
-  .notesList .note .note-link .note-card {
-    width: 200px;
-    height: 325px;
-  }
-  .notesList .note .note-link .note-card .preview-text {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .notesList {
-    margin-top: 100px;
-  }
-  .notesList .note .title {
-    font-size: 0.9rem;
-  }
-  .notesList .note .note-link .note-card {
-    width: 70px;
-    height: 100px;
-  }
-  .notesList .note .note-link .note-card .preview-text {
-    font-size: 0.9rem;
-  }
-}
-
-.addBtnContainer #addBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: #505050;
-  border: solid #a974eb 2px;
-  height: 80px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 5rem;
-  color: #a974eb;
-}
-
-.addBtnContainer #addBtn:hover {
-  cursor: pointer;
-  -webkit-animation: addBtn 0.3s  ease-in-out forwards;
-          animation: addBtn 0.3s  ease-in-out forwards;
-}
-
-@-webkit-keyframes addBtn {
-  100% {
-    background: #a974eb;
-    color: #505050;
-  }
-}
-
-@keyframes addBtn {
-  100% {
-    background: #a974eb;
-    color: #505050;
-  }
+  margin: 50px auto;
 }
 
 .addingNote {
@@ -227,49 +120,31 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   margin: 50px auto;
-  height: 800px;
   width: 700px;
-  background: white;
+  padding: 50px;
   border: solid #a974eb 2px;
   border-radius: 10px;
   color: #a974eb;
 }
 
-.addingNote input {
-  text-align: center;
-  width: 500px;
-  color: #a974eb;
-  font-size: 3rem;
-  font-weight: bold;
-  font-family: 'Quicksand', sans-serif;
-  outline: none;
-  border: none;
-  border-bottom: #a974eb 2px solid;
-  background: white;
+.addingNote #addNote-title {
+  font-size: 2rem;
 }
 
-.addingNote #addContent {
-  width: 400px;
-  height: 400px;
-  padding: 30px;
-  resize: none;
-  border-radius: 5px;
-  outline: none;
-  overflow: visible;
-  border: #a974eb 2px solid;
-  color: #a974eb;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 3rem;
+.addingNote #textArea {
+  font-size: 2rem;
+  padding: 20px;
+  line-height: 1.5;
 }
 
-.addingNote #addContent::-webkit-scrollbar {
+.addingNote #textArea::-webkit-scrollbar {
   width: 10px;
   background: #505050;
 }
 
-.addingNote #addContent::-webkit-scrollbar-thumb {
+.addingNote #textArea::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: #a974eb;
 }
@@ -336,7 +211,7 @@
   width: 200px;
   height: 50px;
   font-size: 2.3rem;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   background: #a974eb;
   border-radius: 0px 15px 15px 0px;
   color: black;
@@ -344,13 +219,13 @@
 
 .addingNote .options .addNote:hover {
   cursor: pointer;
-  -webkit-animation: createNote 0.6s  infinite ease-in-out alternate;
-          animation: createNote 0.6s  infinite ease-in-out alternate;
+  -webkit-animation: createNote 0.6s infinite ease-in-out alternate;
+          animation: createNote 0.6s infinite ease-in-out alternate;
 }
 
 @-webkit-keyframes createNote {
   50% {
-    background: #03dAC6;
+    background: #03dac6;
   }
   100% {
     background: #5be484;
@@ -359,7 +234,7 @@
 
 @keyframes createNote {
   50% {
-    background: #03dAC6;
+    background: #03dac6;
   }
   100% {
     background: #5be484;
@@ -370,54 +245,36 @@
   .addingNote {
     width: 80%;
   }
-  .addingNote input {
-    width: 90%;
-  }
-  .addingNote #addContent {
-    font-size: 3rem;
-    width: 70%;
-  }
-  .addingNote .options {
-    margin: 10px auto;
-  }
-  .addingNote .options .cancelBtn {
-    font-size: 2rem;
-  }
-  .addingNote .options .addNote:hover {
-    -webkit-animation: none;
-            animation: none;
-  }
 }
 
-@media (max-width: 800px) {
-  .addBtnContainer #addBtn {
-    height: 50px;
-    font-size: 3rem;
-  }
+@media (max-width: 600px) {
   .addingNote {
-    height: 70%;
-    width: 90%;
-  }
-  .addingNote input {
     margin: 20px auto;
-    font-size: 2rem;
-    width: 90%;
+    height: 70%;
+    width: 200px;
+    padding: 50px;
   }
-  .addingNote #addContent {
-    font-size: 2rem;
-    width: 70%;
+  .addingNote .helper-text {
+    font-size: 1.5rem;
+  }
+  .addingNote #addNote-title {
+    height: 10px;
+    font-size: 1.3rem;
+  }
+  .addingNote #textArea {
+    font-size: 1.3rem;
   }
   .addingNote .options {
     margin: 10px auto;
   }
   .addingNote .options .cancelBtn {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     height: 40px;
     width: 40px;
   }
   .addingNote .options .addNote {
-    font-size: 1.7rem;
-    width: 150px;
+    font-size: 1.3rem;
+    width: 100px;
     height: 40px;
   }
   .addingNote .options .addNote:hover {
@@ -441,7 +298,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   background: #d87487;
   color: #3d3d3d;
   font-size: 2.5rem;
@@ -508,63 +365,18 @@
   margin-top: 30px;
 }
 
-.note-info .noteInfoTitle .backBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  background: #a974eb;
-  color: #3d3d3d;
-  width: 100px;
-  font-size: 2.5rem;
-  height: 50px;
-  text-align: center;
-  border-radius: 15px;
-  font-family: 'Quicksand', sans-serif;
+.note-info .noteInfoTitle .link {
   text-decoration: none;
 }
 
-.note-info .noteInfoTitle .backBtn:hover {
-  cursor: pointer;
-  -webkit-animation: backBtn 0.1s ease-in-out forwards;
-          animation: backBtn 0.1s ease-in-out forwards;
-}
-
-@-webkit-keyframes backBtn {
-  100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
-
-@keyframes backBtn {
-  100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
-
 .note-info #updateContent {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 4rem;
+  font-family: "Quicksand", sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.6;
   outline: none;
   cursor: auto;
-  background: white;
-  border-radius: 15px;
-  color: #a974eb;
-  resize: none;
-  padding: 100px;
-  width: 70%;
-  height: 50vh;
+  padding: 50px;
+  width: 90%;
 }
 
 .note-info #updateContent::-webkit-scrollbar {
@@ -595,10 +407,10 @@
             animation: none;
   }
   .note-info #updateContent {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: auto;
-    width: 80%;
-    padding: 25px;
+    width: 90%;
+    padding: 30px;
   }
 }
 
@@ -617,20 +429,19 @@
     font-size: 1.5rem;
   }
   .note-info #updateContent {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: auto;
-    width: 80%;
     padding: 25px;
   }
 }
 
 html {
   font-size: 62.5%;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 body {
-  background: #3d3d3d;
+  background: #666;
   margin: 0;
   font-size: 2rem;
 }
@@ -655,7 +466,7 @@ body {
   text-align: center;
   font-size: 2rem;
   border-radius: 25px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   width: 800px;
   height: 300px;
 }

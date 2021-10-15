@@ -1,181 +1,120 @@
-@mixin flexbox($jus,$dir){
-    display:flex;
-    justify-content: $jus;
-    align-items: center;
-    flex-direction: $dir;
+@mixin flexbox($jus, $dir) {
+  display: flex;
+  justify-content: $jus;
+  align-items: center;
+  flex-direction: $dir;
 }
 
-@import './variables';
+@import "./variables";
 
-.addBtnContainer{
-#addBtn{
-    @include flexbox(center,column);
-    background:rgb(80, 80, 80);
-    border:solid $primaryClr 2px;
-    height:80px;
-    margin: auto;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Quicksand', sans-serif;
-    font-size:5rem;
-    color:$primaryClr;
-    &:hover{
+.addBtnContainer {
+  @include flexbox(center, row);
+  margin: 50px auto;
+}
+
+.addingNote {
+  @include flexbox(space-evenly, column);
+  font-family: "Quicksand", sans-serif;
+  margin: 50px auto;
+  width: 700px;
+  padding: 50px;
+  border: solid $primaryClr 2px;
+  border-radius: 10px;
+  color: $primaryClr;
+  #addNote-title {
+    font-size: 2rem;
+  }
+  #textArea {
+    font-size: 2rem;
+    padding: 20px;
+    line-height: 1.5;
+    &::-webkit-scrollbar {
+      width: 10px;
+      background: rgb(80, 80, 80);
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: $primaryClr;
+    }
+  }
+
+  .options {
+    @include flexbox(space-around, row);
+    margin: 20px auto;
+    .cancelBtn {
+      @include flexbox(center, column);
+      background: #d87487;
+      border-radius: 15px 0px 0px 15px;
+      color: black;
+      width: 50px;
+      height: 50px;
+      font-size: 2rem;
+      margin: auto;
+      &:hover {
         cursor: pointer;
-        animation: addBtn 0.3s  ease-in-out forwards;
+        animation: delete 0.2s 2 ease-in-out alternate;
+      }
     }
+    .addNote {
+      @include flexbox(center, row);
+      width: 200px;
+      height: 50px;
+      font-size: 2.3rem;
+      font-family: "Quicksand", sans-serif;
+      background: $primaryClr;
+      border-radius: 0px 15px 15px 0px;
+      color: black;
+      &:hover {
+        cursor: pointer;
+        animation: createNote 0.6s infinite ease-in-out alternate;
+      }
+      @keyframes createNote {
+        50% {
+          background: #03dac6;
+        }
+        100% {
+          background: #5be484;
+        }
+      }
+    }
+  }
 }
-
-@keyframes addBtn {
-    100%{
-        background:$primaryClr;
-        color:rgb(80, 80, 80);
-    }
+@media (max-width: 1200px) {
+  .addingNote {
+    width: 80%;
+  }
 }
-
-}
-.addingNote{
-    @include flexbox(space-evenly,column);
-    font-family: 'Quicksand', sans-serif;
-    margin:50px auto;
-    height:800px;
-    width:700px;
-    background:white;
-    border:solid $primaryClr 2px;
-    border-radius:10px;
-    color:$primaryClr;
-    input{
-        text-align:center;
-        width:500px;
-        color:$primaryClr;
-        font-size:3rem;
-        font-weight: bold;
-        font-family: 'Quicksand', sans-serif;
-        outline:none;
-        border:none;
-        border-bottom:$primaryClr 2px solid;
-        background:white;
+@media (max-width: 600px) {
+  .addingNote {
+    margin: 20px auto;
+    height: 70%;
+    width: 200px;
+    padding: 50px;
+    .helper-text {
+      font-size: 1.5rem;
     }
-    #addContent{
-        width:400px;
-        height:400px;
-        padding:30px;
-        resize:none;
-        border-radius:5px;
-        outline:none;
-        overflow: visible;
-        border:$primaryClr 2px solid;
-        color:$primaryClr;
-        font-family: 'Quicksand', sans-serif;
-        font-size:3rem;
-        &::-webkit-scrollbar{
-            width:10px;
-            background:rgb(80,80,80);
-        }
-        &::-webkit-scrollbar-thumb{
-            border-radius:10px;
-            background:$primaryClr;
-            
-        }
+    #addNote-title {
+      height: 10px;
+      font-size: 1.3rem;
     }
-    .options{
-        @include flexbox(space-around,row);
-        margin:20px auto;
-        .cancelBtn{
-            @include flexbox(center,column);
-            background:#d87487;
-            border-radius:15px 0px 0px 15px;
-            color:black;
-            width:50px;
-            height:50px;
-            font-size:2rem;
-            margin:auto;
-            &:hover{
-                cursor: pointer;
-                animation:delete 0.2s 2 ease-in-out alternate;
-            }
-        }
-        .addNote{
-            @include flexbox(center,row);
-            width:200px;
-            height:50px;
-            font-size:2.3rem;
-            font-family: 'Quicksand', sans-serif;
-            background:$primaryClr;
-            border-radius:0px 15px 15px 0px;
-            color:black;
-            &:hover{
-                cursor: pointer;
-                animation: createNote 0.6s  infinite ease-in-out alternate;
-            }
-            @keyframes createNote{
-                50%{
-                    background:#03dAC6
-                }
-                100%{
-                    background:#5be484;
-                }
-            }
-        }
+    #textArea {
+      font-size: 1.3rem;
     }
-}
-@media (max-width:1200px){
-    .addingNote{
-        width:80%;
-        input{
-            width:90%;
+    .options {
+      margin: 10px auto;
+      .cancelBtn {
+        font-size: 1.3rem;
+        height: 40px;
+        width: 40px;
+      }
+      .addNote {
+        font-size: 1.3rem;
+        width: 100px;
+        height: 40px;
+        &:hover {
+          animation: none;
         }
-        #addContent{
-            font-size:3rem;
-            width:70%;
-        }
-        .options{
-                margin:10px auto;
-            .cancelBtn{
-                font-size:2rem;
-            }
-            .addNote:hover{
-                animation:none;
-            }
-        }
+      }
     }
-}
-
-@media (max-width:800px){
-    .addBtnContainer{
-        #addBtn{
-            height:50px;
-            font-size:3rem;
-        }
-    }
-
-    .addingNote{
-        height:70%;
-        width:90%;
-        input{
-            margin:20px auto;
-            font-size:2rem;
-            width:90%;
-        }
-        #addContent{
-            font-size:2rem;
-            width:70%;
-        }
-        .options{
-                margin:10px auto;
-            .cancelBtn{
-                font-size:1.7rem;
-                height:40px;
-                width:40px;
-            }
-            .addNote{
-                font-size:1.7rem;
-                width:150px;
-                height:40px;
-                &:hover{
-                    animation:none;
-                }
-            }
-        }
-    }
+  }
 }
